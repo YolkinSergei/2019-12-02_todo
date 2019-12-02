@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Second JS Lesson</title>
+	
+	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Todo list</h1>
+
+		<div class="text-right">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask"><span class="glyphicon glyphicon-plus"></span> Add task</button>
+		</div>
+
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#todo" data-toggle="tab">Todo</a></li>
+			<li><a href="#inprogress" data-toggle="tab">In progress</a></li>
+			<li><a href="#done" data-toggle="tab">Done</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" data-status="1" id="todo">
+				<ul class="list-group"></ul>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" data-status="2" id="inprogress">
+				<ul class="list-group"></ul>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" data-status="3" id="done">
+				<ul class="list-group"></ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Add task</h4>
+				</div>
+
+				<div class="modal-body">
+					<form id="formAddTask">
+						<div class="form-group">
+							<input type="text" name="title" placeholder="Title" autofocus="true" class="form-control">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					<button class="btn btn-success" form="formAddTask">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="./js/functions.js"></script>
+	<script src="./js/handlers.js"></script>
+	<script src="./js/script.js"></script>
+</body>
+</html>
