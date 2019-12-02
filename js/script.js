@@ -1,5 +1,11 @@
 'use script';
 
+/*
+ET: 3 часа
+
+AT: 
+*/
+
 let modalAddTask = document.querySelector('#modalAddTask'),
 	formAddTask = document.querySelector('#formAddTask');
 
