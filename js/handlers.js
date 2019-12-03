@@ -12,11 +12,25 @@ function formAddTaskHandler(event) {
 
 	let id = new Date().getTime();
 
-	addTask(newTask, id);
-
 	localStorage.setItem(id, JSON.stringify(newTask));
+
+	addTask(newTask, id);
 
 	$(modalAddTask).modal('hide');
 
 	this.reset();
+}
+
+function removeAllHandler(event) {
+	for (let key in localStorage) {
+		if (localStorage.hasOwnProperty(key)) {
+			let taskItem = document.querySelector('#item-' + key);
+
+			if (taskItem) taskItem.parentElement.removeChild(taskItem);
+
+			delete localStorage[key];
+		}
+	}
+
+	calculateTaskCount();
 }

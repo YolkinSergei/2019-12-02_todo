@@ -12,7 +12,12 @@
 		<h1>Todo list</h1>
 
 		<div class="text-right">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask"><span class="glyphicon glyphicon-plus"></span> Add task</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask">
+				<span class="glyphicon glyphicon-plus"></span> Add task
+			</button>
+			<button type="button" class="btn btn-danger" id="btnRemoveAll">
+				<span class="glyphicon glyphicon-remove"></span> Remove all
+			</button>
 		</div>
 
 		<ul class="nav nav-tabs" role="tablist">
@@ -32,6 +37,39 @@
 
 			<div role="tabpanel" class="tab-pane" data-status="3" id="done">
 				<ul class="list-group"></ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						Should be done
+					</div>
+					<div class="panel-body">
+						Task Count: <span class="badge" data-count-status="1">0</span>
+					</div>
+				</div>
+			</div>
+			<div class=" col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						Will be done soon
+					</div>
+					<div class="panel-body">
+						Task Count: <span class="badge" data-count-status="2">0</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						Already done
+					</div>
+					<div class="panel-body">
+						Task Count: <span class="badge" data-count-status="3">0</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
