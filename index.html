@@ -101,6 +101,61 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="modalEditTask" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Edit task</h4>
+				</div>
+
+				<div class="modal-body">
+					<form id="formEditTask">
+						<div class="form-group">
+							<input type="hidden" name="id">
+							<select name="status" class="form-control">
+								<option value="1">To do</option>
+								<option value="2">In progress</option>
+								<option value="3">Done</option>
+							</select>
+							<input type="text" name="title" placeholder="Title" autofocus="true" class="form-control">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					<button class="btn btn-success" form="formEditTask">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Delete task</h4>
+				</div>
+
+				<div class="modal-body">
+					Are you sure?
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" data-dismiss="modal">No</button>
+					<button class="btn btn-success" id="buttonConfirm">Yes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="./js/functions.js"></script>
