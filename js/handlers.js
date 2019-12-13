@@ -3,15 +3,17 @@
 function formAddTaskHandler(event) {
 	event.preventDefault();
 
-	let value = this.elements.title.value;
+	let elements = this.elements;
 	
 	let newTask = {
-		title: value,
+		title: elements.title.value,
+		date: elements.date.value,
+		description: elements.description.value,
 		status: 1 // 1 - todo, 2 - in progress, 3 - done
 	};
 
 	if (!newTask.title) {
-		this.elements.title.parentNode.classList.add('has-error');
+		elements.title.parentNode.classList.add('has-error');
 
 		return;
 	}
@@ -30,15 +32,18 @@ function formAddTaskHandler(event) {
 function formEditTaskHandler(event) {
 	event.preventDefault();
 
-	let taskId = this.elements.id.value,
+	let elements = this.elements,
+		taskId = elements.id.value,
 		taskObject = {
-			title: this.elements.title.value,
-			status: +this.elements.status.value
+			title: elements.title.value,
+			date: elements.date.value,
+			description: elements.description.value,
+			status: +elements.status.value
 		},
 		taskElement = document.querySelector(`[data-id="${taskId}"]`);
 
 	if (!taskObject.title) {
-		this.elements.title.parentNode.classList.add('has-error');
+		elements.title.parentNode.classList.add('has-error');
 
 		return;
 	}
@@ -79,6 +84,8 @@ function deleteButtonHandler(event) {
 		taskElement.parentNode.removeChild(taskElement);
 
 		$(modalConfirmDelete).modal('hide');
+	}, {
+		once: true
 	});
 }
 
@@ -87,8 +94,12 @@ function editButtonHandler(event) {
 		taskId = taskElement.dataset.id,
 		task = JSON.parse(localStorage.getItem(taskId));
 
+	formEditTask.reset();
+
 	for (let key in task) {
-		formEditTask.elements[key].value = task[key];
+		if (formEditTask.elements[key]) {
+			formEditTask.elements[key].value = task[key];
+		}
 	}
 
 	document.querySelector('[name="id"]').value = taskId;
@@ -105,8 +116,3 @@ function modalEditTaskHandler(event) {
 	formEditTask.elements.title.parentNode.classList.remove('has-error');
 	formEditTask.elements.title.focus();
 }
-/*
-function buttonConfirmHandler() {
-	$(modalConfirmDelete).modal('show');
-
-}*/

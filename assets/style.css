@@ -11,5 +11,14 @@
 }
 
 .form-control {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+.description-field {
+	margin-top: 10px;
+	resize: none;
+}
+
+dl {
+	margin-bottom: 0px;
 }

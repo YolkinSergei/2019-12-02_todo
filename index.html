@@ -5,6 +5,7 @@
 	<title>Second JS Lesson</title>
 	
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -89,6 +90,13 @@
 					<form id="formAddTask">
 						<div class="form-group">
 							<input type="text" name="title" placeholder="Title" autofocus="true" class="form-control">
+							<div class="input-group date" data-provide="datepicker">
+								<input type="text" name="date" class="form-control" placeholder="mm/dd/yyyy">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</div>
+							</div>
+							<textarea class="form-control description-field" name="description" id="" cols="30" rows="10"></textarea>
 						</div>
 					</form>
 				</div>
@@ -121,6 +129,13 @@
 								<option value="3">Done</option>
 							</select>
 							<input type="text" name="title" placeholder="Title" autofocus="true" class="form-control">
+							<div class="input-group date" data-provide="datepicker">
+								<input type="text" name="date" class="form-control" placeholder="mm/dd/yyyy">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</div>
+							</div>
+							<textarea class="form-control description-field" name="description" id="" cols="30" rows="10"></textarea>
 						</div>
 					</form>
 				</div>
@@ -158,6 +173,7 @@
 
 	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="./node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="./js/functions.js"></script>
 	<script src="./js/handlers.js"></script>
 	<script src="./js/script.js"></script>

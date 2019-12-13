@@ -6,6 +6,10 @@ ET: 3 часа
 AT: 2 часа 26 мин
 */
 
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
+
 let modalAddTask = document.querySelector('#modalAddTask'),
 	formAddTask = document.querySelector('#formAddTask'),
 	modalEditTask = document.querySelector('#modalEditTask'),
